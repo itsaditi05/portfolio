@@ -499,6 +499,61 @@
         letter-spacing: 0.05em;
         transition: all 0.2s;
       }
+      /* PROJECTS & EXPERIENCE GRID FIX */
+.project-wrap, .exp-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This creates the 2-column Bento look */
+    border-top: 2px solid var(--black);
+    width: 100%;
+}
+
+.project-left, .exp-left {
+    padding: 56px;
+    border-right: 2px solid var(--black);
+    background: var(--white);
+}
+
+.project-right, .exp-right {
+    padding: 56px;
+    background: var(--black); /* Dark side */
+    color: var(--white);
+}
+
+.project-right.light {
+    background: var(--grey); /* Light side for alternate projects */
+    color: var(--black);
+}
+
+/* Feature List Styling */
+.feature-list, .exp-list {
+    list-style: none;
+}
+
+.feature-list li, .exp-list li {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.75;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.feature-list li::before, .exp-list li::before {
+    content: "→";
+    color: var(--pop);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .project-wrap, .exp-wrap {
+        grid-template-columns: 1fr;
+    }
+    .project-left, .exp-left {
+        border-right: none;
+        border-bottom: 2px solid var(--black);
+    }
+}
 <section class="section" id="projects">
   <div class="section-header">
     <div class="section-num">02</div>
